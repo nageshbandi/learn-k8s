@@ -34,22 +34,36 @@ kubectl get svc -A
 kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/my-nginx-svc 80
 
 kubectl --address 0.0.0.0 port-forward svc/my-nginx-svc 80
+
 apk add helm
+
 helm --version 
+
 helm version
+
 helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+
 helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+
 kubectl -n kubernetes-dashboard get svc
+
 kubectl -n kubernetes-dashboard --address 0.0.0.0 port-forward svc/kubernetes-dashboard-kong-proxy 8443
+
 kubectl -n kubernetes-dashboard --address 0.0.0.0 port-forward svc/kubernetes-dashboard-kong-proxy 443
+
 
 #kubectl -n NAMESPACE create token SERVICE_ACCOUNT
  kubectl get ns
 
 #kubectl -n kubernetes-dashboard create token SERVICE_ACCOUNT
 kubectl -n kubernetes-dashboard create token SERVICE_ACCOUNT
+
 kubectl get service-acount
+
 kubectl get sv
+
 kubectl get sa
+
 kubectl -n kubernetes-dashboard create token bandi
-  41 kubectl -n kubernetes-dashboard create token default
+
+kubectl -n kubernetes-dashboard create token default
