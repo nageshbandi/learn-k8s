@@ -7,20 +7,32 @@ kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/my-nginx-svc 80
 #kind --version 
 # create k8s cluster 
 kind create cluster --image kindest/node:v1.23.5
+
 kubectl get nodes
+
 kubectl create namespace cms
+
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/application/nginx-app.yaml
+
 kubectl get svc
+
 kubectl edit svc my-nginx-svc
+
 kubectl get svc
+
 # Install Ingress controller 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/cloud/deploy.yaml
+
 kubectl -n ingress-nginx get pods
 
 #kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/ingress-nginx-controller 80
+
 kubectl get svc
+
 kubectl get svc -A
+
 kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/my-nginx-svc 80
+
 kubectl --address 0.0.0.0 port-forward svc/my-nginx-svc 80
 apk add helm
 helm --version 
