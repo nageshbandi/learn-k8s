@@ -1,6 +1,10 @@
 # learn-k8s
 learn k8s 
 
+# Links and repos:
+https://github.com/marcel-dempers/docker-development-youtube-series/blob/master/kubernetes/tutorials/basics/README.md 
+
+
 # port forword
 kubectl -n ingress-nginx --address 0.0.0.0 port-forward svc/my-nginx-svc 80
 
